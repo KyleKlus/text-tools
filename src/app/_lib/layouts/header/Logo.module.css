@@ -18,6 +18,7 @@
 
 .logoWrapper > p {
   font-size: x-large;
+  margin: 0;
 }
 
 /* Enable hover only on non-touch devices */

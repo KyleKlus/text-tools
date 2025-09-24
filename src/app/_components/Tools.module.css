@@ -3,30 +3,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
     min-width: min(1200px, 80dvw);
 }
 
 .tabContainer {
-    width: 100%;
+    --tab-margin: 1rem;
+    width: calc(100% - 2 * var(--tab-margin));
+    margin: 0 var(--tab-margin);
+}
+
+.tabContainer {
+    border: none;
 }
 
 .tabContainer .tabItem .tabLink {
     color: var(--bg-color-90);
     box-shadow: none;
-    border-color: transparent;
+    border-bottom: none;
 
     &:hover {
-        border-color: transparent;
+        isolation: unset;
+        border-color: var(--bg-color-50);
         color: var(--bg-color-90);
-        box-shadow: 0px 1px 0px var(--color-accent-10);
     }
 
     &[class*='active'] {
-        background-color: transparent;
-        border-color: transparent;
+        background-color: var(--bg-color-00);
+        isolation: unset;
+        border-color: var(--bg-color-50);
         color: var(--bg-color-90);
-        box-shadow: 0px 1px 0px var(--color-accent-10);
     }
 }
 
@@ -37,6 +42,10 @@
     align-items: center;
     gap: 3rem;
     width: 100%;
+    background-color: var(--bg-color-00);
+    border: 1px solid var(--bg-color-50);
+    border-radius: var(--border-radius);
+    padding: 1rem;
 }
 
 .stats {
