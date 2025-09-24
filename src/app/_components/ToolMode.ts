@@ -1,6 +1,6 @@
 export enum ToolMode {
-    ReplaceString = 'Replace string',
-    ReplaceStringBetween = 'Replace string between',
-    ReplaceStringWithRegex = 'Replace string with regex',
-    CountOccurrences = 'Count Occurrences',
+    ReplaceString = 'Replace text',
+    ReplaceStringBetween = 'Replace text between',
+    ReplaceStringWithRegex = 'Regex: Replace text',
+    CountOccurrences = 'Count occurrences',
 }
