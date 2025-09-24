@@ -1,7 +1,7 @@
 /** @format */
 import styles from './SideNavigation.module.css';
-import Card from '@/lib/container/Card';
-import ScrollNavLink from '@/lib/interaction/links/ScrollNavLink';
+import Card from '@/app/_lib/container/Card';
+import ScrollNavLink from '@/app/_lib/interaction/links/ScrollNavLink';
 
 interface ISideNavigationProps {
   isActive: boolean;
@@ -10,7 +10,6 @@ export default function SideNavigation(
   props: React.PropsWithChildren<ISideNavigationProps>
 ) {
   const isActiveClassName = props.isActive ? styles.isActive : styles.isDisabled;
-
 
   return (
     <nav className={[styles.sideNavMenu, isActiveClassName, 'shadowElevation_5'].join(' ')}>

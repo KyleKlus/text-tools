@@ -1,5 +1,5 @@
 /** @format */
-import Content from '@/lib/container/Content';
+import Content from '@/app/_lib/container/Content';
 
 function Page() {
   return (

@@ -5,13 +5,13 @@ import styles from './Header.module.css';
 import sideNavStyles from './SideNavigation.module.css'
 import React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import ScrollUpButton from '@/lib/interaction/forms/buttons/ScrollUpButton';
-import SideNavigationButton from '@/lib/interaction/forms/buttons/SideNavigationButton';
-import Card from '@/lib/container/Card';
-import NavLink from '@/lib/interaction/links/NavLink';
-import HeaderNavigation from '@/lib/layouts/header/HeaderNavigation';
-import Logo from '@/lib/layouts/header/Logo';
-import SideNavigation from '@/lib/layouts/header/SideNavigation';
+import ScrollUpButton from '@/app/_lib/interaction/forms/buttons/ScrollUpButton';
+import SideNavigationButton from '@/app/_lib/interaction/forms/buttons/SideNavigationButton';
+import Card from '@/app/_lib/container/Card';
+import NavLink from '@/app/_lib/interaction/links/NavLink';
+import HeaderNavigation from '@/app/_lib/layouts/header/HeaderNavigation';
+import Logo from '@/app/_lib/layouts/header/Logo';
+import SideNavigation from '@/app/_lib/layouts/header/SideNavigation';
 
 interface IHeaderProps {
   overrideSideNavContent?: React.ReactNode,
@@ -92,7 +92,7 @@ export default function Header(props: React.PropsWithChildren<IHeaderProps>) {
         </div>
         <HeaderNavigation>
           {props.children}
-          <SideNavigationButton
+          {/* <SideNavigationButton
             isActive={isSideNavigationActive}
             onClick={() => {
               setIsSideNavigationActive(!isSideNavigationActive);
@@ -105,11 +105,11 @@ export default function Header(props: React.PropsWithChildren<IHeaderProps>) {
                 isHeaderHiddenClassName.current = currentScrollPos <= 64 ? '' : styles.isVisible
               }
             }}
-          />
+          /> */}
         </HeaderNavigation>
 
       </header>
-      <SideNavigation isActive={isSideNavigationActive}>
+      {/* <SideNavigation isActive={isSideNavigationActive}>
         {props.overrideSideNavContent
           ? props.overrideSideNavContent
           : <>
@@ -144,7 +144,7 @@ export default function Header(props: React.PropsWithChildren<IHeaderProps>) {
             })}
           </>
         }
-      </SideNavigation>
+      </SideNavigation> */}
 
       <ScrollUpButton isVisible={!isScrollArrowHidden}></ScrollUpButton>
     </div>
