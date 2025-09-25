@@ -25,6 +25,17 @@ export default function Page() {
         <Content className={[styles.textToolsPage, 'dotted'].join(' ')}>
             <h1>Text Tools</h1>
             <Tools />
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.5rem' }}>
+                <div style={{ fontSize: 'large' }}>Like this tool?</div>
+                <a
+                    href='https://ko-fi.com/W7W1D5JTZ'
+                    target='_blank'
+                    className={styles.donateButton}
+                >
+                    Donate ❤️
+                </a>
+            </div>
+
         </Content>
     );
 }
