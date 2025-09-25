@@ -1,7 +1,7 @@
 /** @format */
 import styles from './SideNavigation.module.css';
-import Card from '@/app/_lib/container/Card';
-import ScrollNavLink from '@/app/_lib/interaction/links/ScrollNavLink';
+import Card from '@/lib/container/Card';
+import ScrollNavLink from '@/lib/interaction/links/ScrollNavLink';
 
 interface ISideNavigationProps {
   isActive: boolean;

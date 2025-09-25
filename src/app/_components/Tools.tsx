@@ -20,7 +20,7 @@ export default function Tools(props: { locale: 'en' | 'de' }) {
             case ToolMode.ReplaceStringBetween:
                 return props.locale === 'en' ? ToolMode.ReplaceStringBetween : "Ersetze Text zwischen";
             case ToolMode.ReplaceStringWithRegex:
-                return props.locale === 'en' ? ToolMode.ReplaceStringWithRegex : "Ersetze Text mit Regex";
+                return props.locale === 'en' ? ToolMode.ReplaceStringWithRegex : "Regex: Ersetze Text";
             case ToolMode.CountOccurrences:
                 return props.locale === 'en' ? ToolMode.CountOccurrences : "Zähle Vorkommen";
         }

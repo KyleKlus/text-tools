@@ -1,4 +1,4 @@
-import Content from "@/app/_lib/container/Content";
+import Content from "@/lib/container/Content";
 
 import type { Metadata, Viewport } from 'next'
 import styles from '../TextToolsPage.module.css';

@@ -1,15 +1,15 @@
 /** @format */
-import Footer from '@/app/_lib/layouts/footer/Footer';
-import Header from '@/app/_lib/layouts/header/Header';
+import Footer from '@/lib/layouts/footer/Footer';
+import Header from '@/lib/layouts/header/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './default-look.css';
 import './globals.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Main from '@/app/_lib/container/Main';
+import Main from '@/lib/container/Main';
 
 import { Fira_Code } from "next/font/google";
-import { ThemeProvider } from '@/app/_lib/provider/theme-provider';
-import ThemeButton from '@/app/_lib/interaction/forms/buttons/ThemeButton';
+import { ThemeProvider } from '@/lib/provider/theme-provider';
+import ThemeButton from '@/lib/interaction/forms/buttons/ThemeButton';
 
 const firaCode = Fira_Code({ weight: '400', subsets: ['latin'] });
 
