@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './Tools.module.css';
 import Stats from "./Stats";
 
-export default function CountOccurrencesToolPage(props: { text: string, setText: (text: string) => void }) {
+export default function CountOccurrencesToolPage(props: { locale: 'en' | 'de', text: string, setText: (text: string) => void }) {
     const { text, setText } = props;
     const [countText, setCountText] = useState("");
 
@@ -16,8 +16,8 @@ export default function CountOccurrencesToolPage(props: { text: string, setText:
                 }} />
             </div>
             <div className={styles.textareaContainer}>
-                <Stats text={text} occurrenceText={countText} />
-                <textarea id="countOccurrencesTextarea" className={styles.textarea} placeholder="Enter text here..." value={text} onChange={(e) => {
+                <Stats locale={props.locale} text={text} occurrenceText={countText} />
+                <textarea id="countOccurrencesTextarea" className={styles.textarea} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
                     setText(e.target.value);
                 }} />
             </div>

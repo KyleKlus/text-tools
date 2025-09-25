@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './Tools.module.css';
 import Stats from "./Stats";
 
-export default function ReplaceStringWithRegexToolPage(props: { text: string, setText: (text: string) => void }) {
+export default function ReplaceStringWithRegexToolPage(props: { locale: 'en' | 'de', text: string, setText: (text: string) => void }) {
     const { text, setText } = props;
     const [regex, setRegex] = useState("");
     const [replaceWith, setReplaceWith] = useState("");
@@ -15,7 +15,7 @@ export default function ReplaceStringWithRegexToolPage(props: { text: string, se
                 <input type="text" placeholder="Regex..." value={regex} onChange={(e) => {
                     setRegex(e.target.value);
                 }} />
-                <input type="text" placeholder="With..." value={replaceWith} onChange={(e) => {
+                <input type="text" placeholder={props.locale === 'en' ? "Replace with..." : "Ersetze mit..."} value={replaceWith} onChange={(e) => {
                     setReplaceWith(e.target.value);
                 }} />
                 <button
@@ -25,12 +25,12 @@ export default function ReplaceStringWithRegexToolPage(props: { text: string, se
                         newText = text.replaceAll(regexObj, replaceWith);
                         setText(newText);
                     }}>
-                    Replace
+                    {props.locale === 'en' ? "Replace" : "Ersetze"}
                 </button>
             </div>
             <div className={styles.textareaContainer}>
-                <Stats text={text} />
-                <textarea className={styles.textarea} placeholder="Enter text here..." value={text} onChange={(e) => {
+                <Stats locale={props.locale} text={text} />
+                <textarea className={styles.textarea} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
                     setText(e.target.value);
                 }} />
             </div>

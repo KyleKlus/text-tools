@@ -1,6 +1,6 @@
 import styles from './Tools.module.css';
 
-export default function Stats(props: { text: string, occurrenceText?: string }) {
+export default function Stats(props: { locale: 'en' | 'de', text: string, occurrenceText?: string }) {
     const { text, occurrenceText } = props;
     const showOccurrences = occurrenceText !== undefined;
     const occurrences = showOccurrences && occurrenceText !== "" ? text.split(occurrenceText).length - 1 : 0;
@@ -10,12 +10,12 @@ export default function Stats(props: { text: string, occurrenceText?: string }) 
 
     return (
         <div className={styles.stats} >
-            {showOccurrences && <div>Occurrences: {occurrences}</div>}
-            {!showOccurrences && <div>Words: {wordCount}</div>}
+            {showOccurrences && <div>{props.locale === 'en' ? "Occurrences: " : "Vorkommen: "}{occurrences}</div>}
+            {!showOccurrences && <div>{props.locale === 'en' ? "Words: " : "Wörter: "}{wordCount}</div>}
             {!showOccurrences && <div className={styles.divider}></div>}
-            {!showOccurrences && <div>Characters: {charCount}</div>}
+            {!showOccurrences && <div>{props.locale === 'en' ? "Characters: " : "Zeichen: "}{charCount}</div>}
             {!showOccurrences && <div className={styles.divider}></div>}
-            {!showOccurrences && <div>Lines: {lineCount}</div>}
+            {!showOccurrences && <div>{props.locale === 'en' ? "Lines: " : "Zeilen: "}{lineCount}</div>}
         </div>
     );
 }

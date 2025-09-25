@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from './Tools.module.css';
 import Stats from "./Stats";
 
-export default function ReplaceStringBetweenToolPage(props: { text: string, setText: (text: string) => void }) {
+export default function ReplaceStringBetweenToolPage(props: { locale: 'en' | 'de', text: string, setText: (text: string) => void }) {
     const { text, setText } = props;
     const [replaceText, setReplaceText] = useState("");
     const [replaceWith, setReplaceWith] = useState("");
@@ -16,10 +16,10 @@ export default function ReplaceStringBetweenToolPage(props: { text: string, setT
                 <input type="text" placeholder="Start..." value={replaceText} onChange={(e) => {
                     setReplaceText(e.target.value);
                 }} />
-                <input type="text" placeholder="Replace with..." value={replaceWith} onChange={(e) => {
+                <input type="text" placeholder={props.locale === 'en' ? "Replace with..." : "Ersetze mit..."} value={replaceWith} onChange={(e) => {
                     setReplaceWith(e.target.value);
                 }} />
-                <input type="text" placeholder="End..." value={replaceTextEnd} onChange={(e) => {
+                <input type="text" placeholder={props.locale === 'en' ? "End..." : "Ende..."} value={replaceTextEnd} onChange={(e) => {
                     setReplaceTextEnd(e.target.value);
                 }} />
                 <button
@@ -39,12 +39,12 @@ export default function ReplaceStringBetweenToolPage(props: { text: string, setT
 
                         setText(newText);
                     }}>
-                    Replace
+                    {props.locale === 'en' ? "Replace" : "Ersetze"}
                 </button>
             </div>
             <div className={styles.textareaContainer}>
-                <Stats text={text} />
-                <textarea className={styles.textarea} placeholder="Enter text here..." value={text} onChange={(e) => {
+                <Stats locale={props.locale} text={text} />
+                <textarea className={styles.textarea} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
                     setText(e.target.value);
                 }} />
             </div>

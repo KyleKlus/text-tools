@@ -1,8 +1,8 @@
 import Content from "@/app/_lib/container/Content";
 
 import type { Metadata, Viewport } from 'next'
-import styles from './TextToolsPage.module.css';
-import Tools from "./_components/Tools";
+import styles from '../TextToolsPage.module.css';
+import Tools from "../_components/Tools";
 
 export const metadata: Metadata = {
     title: "Kyle Klus | Text Tools",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         countryName: "US",
-        url: "https://kyleklus.de/text-tools",
+        url: "https://kyleklus.de/text-tools/en",
         title: "Kyle Klus | Text Tools",
         description: "A collection of text tools to help with text manipulation and formatting.",
     },

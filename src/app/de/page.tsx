@@ -1,27 +1,27 @@
 import Content from "@/app/_lib/container/Content";
 
 import type { Metadata, Viewport } from 'next'
-import styles from './TextToolsPage.module.css';
-import Tools from "./_components/Tools";
+import styles from '../TextToolsPage.module.css';
+import Tools from "../_components/Tools";
 
 export const metadata: Metadata = {
     title: "Kyle Klus | Text Tools",
-    description: "A collection of text tools to help with text manipulation and formatting.",
+    description: "Eine Sammlung von Text-Tools, um Text-Manipulation und Text-Formatierung zu unterstützen.",
     authors: [{ name: "Kyle Klus", url: "https://kyleklus.de" }],
-    keywords: ["text tools", "text manipulation", "text formatting", "online tools", "free tools"],
+    keywords: ["text tools", "text manipulation", "text formatting", "online tools", "free tools", "werkzeuge", "text-tools", "text-manipulation", "text-formatting", "online-tools", "free-tools", "tools", "kostenlos", "gratis"],
     creator: "Kyle Klus",
     publisher: "Kyle Klus",
-    abstract: "A collection of text tools to help with text manipulation and formatting.",
+    abstract: "Eine Sammlung von Text-Tools, um Text-Manipulation und Text-Formatierung zu unterstützen.",
     applicationName: "Text Tools",
-    category: "tools",
+    category: "werkzeuge",
     classification: "text tools",
     openGraph: {
         type: "website",
-        locale: "en_US",
-        countryName: "US",
-        url: "https://kyleklus.de/text-tools",
+        locale: "de_DE",
+        countryName: "DE",
+        url: "https://kyleklus.de/text-tools/de",
         title: "Kyle Klus | Text Tools",
-        description: "A collection of text tools to help with text manipulation and formatting.",
+        description: "Eine Sammlung von Text-Tools, um Text-Manipulation und Text-Formatierung zu unterstützen.",
     },
 }
 
@@ -34,15 +34,15 @@ export default function Page() {
     return (
         <Content className={[styles.textToolsPage, 'dotted'].join(' ')}>
             <h1>Text Tools</h1>
-            <Tools locale="en" />
+            <Tools locale="de" />
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ fontSize: 'large' }}>Like this tool?</div>
+                <div style={{ fontSize: 'large' }}>Du magst dieses Tool?</div>
                 <a
                     href='https://ko-fi.com/W7W1D5JTZ'
                     target='_blank'
                     className={styles.donateButton}
                 >
-                    Donate ❤️
+                    Spende ❤️
                 </a>
             </div>
 
