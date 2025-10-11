@@ -97,3 +97,45 @@
     height: 100%;
     resize: none;
 }
+
+@media (max-width: 850px) {
+    .tools {
+        font-size: small;
+    }
+}
+
+@media (max-width: 700px) {
+    .tabContainer .tabItem .tabLink {
+        font-size: smaller;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .tabContainer .tabItem .tabLink {
+        font-size: x-small;
+        padding: 0.25rem 0.25rem;
+    }
+
+    .tools {
+        width: 100%;
+    }
+
+    .toolPage {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+    }
+
+    .tabContainer {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .tabContainer .tabItem .tabLink {
+        font-size: xx-small;
+    }
+}
