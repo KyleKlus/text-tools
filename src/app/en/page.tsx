@@ -3,26 +3,14 @@ import Content from "@/lib/container/Content";
 import type { Metadata, Viewport } from 'next'
 import styles from '../TextToolsPage.module.css';
 import Tools from "../_components/Tools";
+import { defaultSiteConfig } from "../defaultSiteConfig";
 
 export const metadata: Metadata = {
-    title: "Kyle Klus | Text Tools",
-    description: "A collection of text tools to help with text manipulation and formatting.",
-    authors: [{ name: "Kyle Klus", url: "https://kyleklus.de" }],
-    keywords: ["text tools", "text manipulation", "text formatting", "online tools", "free tools"],
-    creator: "Kyle Klus",
-    publisher: "Kyle Klus",
-    abstract: "A collection of text tools to help with text manipulation and formatting.",
-    applicationName: "Text Tools",
-    category: "tools",
-    classification: "text tools",
+    ...defaultSiteConfig.metadata.en,
     openGraph: {
-        type: "website",
-        locale: "en_US",
-        countryName: "US",
-        url: "https://kyleklus.de/text-tools/en",
-        title: "Kyle Klus | Text Tools",
-        description: "A collection of text tools to help with text manipulation and formatting.",
-    },
+        ...defaultSiteConfig.metadata.en.openGraph,
+        url: `${defaultSiteConfig.metadata.en.openGraph.url}/en`
+    }
 }
 
 export const viewport: Viewport = {
@@ -32,20 +20,21 @@ export const viewport: Viewport = {
 
 export default function Page() {
     return (
-        <Content className={[styles.textToolsPage, 'dotted'].join(' ')}>
+        <Content className={[styles.textToolsPage, 'dotted', 'applyBottomPadding'].join(' ')}>
             <h1>Text Tools</h1>
             <Tools locale="en" />
             <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.5rem' }}>
-                <div style={{ fontSize: 'large' }}>Like this tool?</div>
-                <a
-                    href='https://ko-fi.com/W7W1D5JTZ'
-                    target='_blank'
-                    className={styles.donateButton}
-                >
-                    Donate ❤️
-                </a>
+                <div className={styles.donationContainer}>
+                    <div>Like this tool?</div>
+                    <a
+                        href='https://ko-fi.com/W7W1D5JTZ'
+                        target='_blank'
+                        className={styles.donateButton}
+                    >
+                        Donate ❤️
+                    </a>
+                </div>
             </div>
-
         </Content>
     );
 }

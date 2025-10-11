@@ -13,16 +13,17 @@ export default function ReplaceStringBetweenToolPage(props: { locale: 'en' | 'de
     return (
         <div className={styles.toolPage}>
             <div className={styles.replaceStringControls}>
-                <input type="text" placeholder="Start..." value={replaceText} onChange={(e) => {
+                <input className={'textboxClass'} type="text" placeholder="Start..." value={replaceText} onChange={(e) => {
                     setReplaceText(e.target.value);
                 }} />
-                <input type="text" placeholder={props.locale === 'en' ? "Replace with..." : "Ersetze mit..."} value={replaceWith} onChange={(e) => {
+                <input className={'textboxClass'} type="text" placeholder={props.locale === 'en' ? "Replace with..." : "Ersetze mit..."} value={replaceWith} onChange={(e) => {
                     setReplaceWith(e.target.value);
                 }} />
-                <input type="text" placeholder={props.locale === 'en' ? "End..." : "Ende..."} value={replaceTextEnd} onChange={(e) => {
+                <input className={'textboxClass'} type="text" placeholder={props.locale === 'en' ? "End..." : "Ende..."} value={replaceTextEnd} onChange={(e) => {
                     setReplaceTextEnd(e.target.value);
                 }} />
                 <button
+                    className={'buttonClass'}
                     onClick={() => {
                         let newText = "";
 
@@ -44,7 +45,7 @@ export default function ReplaceStringBetweenToolPage(props: { locale: 'en' | 'de
             </div>
             <div className={styles.textareaContainer}>
                 <Stats locale={props.locale} text={text} />
-                <textarea className={styles.textarea} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
+                <textarea className={[styles.textarea, 'textboxClass'].join(' ')} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
                     setText(e.target.value);
                 }} />
             </div>

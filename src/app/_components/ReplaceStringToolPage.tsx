@@ -12,13 +12,14 @@ export default function ReplaceStringToolPage(props: { locale: 'en' | 'de', text
     return (
         <div className={styles.toolPage}>
             <div className={styles.replaceStringControls}>
-                <input type="text" placeholder={props.locale === 'en' ? "Replace..." : "Ersetze..."} value={replaceText} onChange={(e) => {
+                <input className={'textboxClass'} type="text" placeholder={props.locale === 'en' ? "Replace..." : "Ersetze..."} value={replaceText} onChange={(e) => {
                     setReplaceText(e.target.value);
                 }} />
-                <input type="text" placeholder={props.locale === 'en' ? "With..." : "Mit..."} value={replaceWith} onChange={(e) => {
+                <input className={'textboxClass'} type="text" placeholder={props.locale === 'en' ? "With..." : "Mit..."} value={replaceWith} onChange={(e) => {
                     setReplaceWith(e.target.value);
                 }} />
                 <button
+                    className={'buttonClass'}
                     onClick={() => {
                         let newText = "";
                         newText = text.replaceAll(replaceText, replaceWith);
@@ -29,7 +30,7 @@ export default function ReplaceStringToolPage(props: { locale: 'en' | 'de', text
             </div>
             <div className={styles.textareaContainer}>
                 <Stats locale={props.locale} text={text} />
-                <textarea className={styles.textarea} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
+                <textarea className={[styles.textarea, 'textboxClass'].join(' ')} placeholder={props.locale === 'en' ? "Enter text here..." : "Gib hier deinen Text ein..."} value={text} onChange={(e) => {
                     setText(e.target.value);
                 }} />
             </div>
