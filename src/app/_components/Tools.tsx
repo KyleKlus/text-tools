@@ -43,6 +43,7 @@ export default function Tools(props: { locale: 'en' | 'de' }) {
             {mode === ToolMode.ReplaceStringBetween && <ReplaceStringBetweenToolPage locale={props.locale} text={text} setText={setText} />}
             {mode === ToolMode.ReplaceStringWithRegex && <ReplaceStringWithRegexToolPage locale={props.locale} text={text} setText={setText} />}
             {mode === ToolMode.CountOccurrences && <CountOccurrencesToolPage locale={props.locale} text={text} setText={setText} />}
+
         </div>
     );
 }
