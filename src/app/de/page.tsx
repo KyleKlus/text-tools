@@ -20,22 +20,9 @@ export const viewport: Viewport = {
 
 export default function Page() {
     return (
-        <Content className={[styles.textToolsPage, 'dotted', 'applyBottomPadding'].join(' ')}>
+        <Content className={[styles.textToolsPage, 'dotted',].join(' ')}>
             <h1>Text Tools</h1>
             <Tools locale="de" />
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '1.5rem' }}>
-                <div className={styles.donationContainer}>
-                    <div>Du magst dieses Tool?</div>
-                    <a
-                        href='https://ko-fi.com/W7W1D5JTZ'
-                        target='_blank'
-                        className={styles.donateButton}
-                    >
-                        Spende ❤️
-                    </a>
-                </div>
-            </div>
-
         </Content>
     );
 }
