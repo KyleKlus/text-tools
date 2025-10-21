@@ -1,4 +1,4 @@
-const basePath: string = '/text-tools';
+const basePath: string = '';
 const url: string = 'https://kyleklus.de';
 const heropageUrl: string = `${url}/#heroPage`;
 const portfoliopageUrl: string = `${url}/#portfolioPage`;
@@ -17,23 +17,13 @@ const kofiUrl: string = 'https://ko-fi.com/majorenkidu';
 const contactUrl: string = 'mailto:kyle.klus.2@gmail.com';
 const author: string = 'Kyle Klus';
 const metadataEn = {
-    title: "Kyle Klus | Text Tools",
-    description: "A collection of text tools to help with text manipulation and formatting.",
-    authors: [{ name: author, url: url }],
-    keywords: ["text tools", "text manipulation", "text formatting", "online tools", "free tools"],
-    creator: author,
-    publisher: author,
-    abstract: "A collection of text tools to help with text manipulation and formatting.",
-    applicationName: "Text Tools",
-    category: "tools",
-    classification: "text tools",
+    title: "Kyle Klus | Website 🚀",
+    description: "Website of Kyle Klus.",
     openGraph: {
         type: "website",
-        locale: "en_US",
-        countryName: "US",
-        url: `${url}${basePath}`,
-        title: "Kyle Klus | Text Tools",
-        description: "A collection of text tools to help with text manipulation and formatting.",
+        url: url,
+        title: "Kyle Klus | Website",
+        description: "Website of Kyle Klus.",
     },
 }
 
@@ -60,16 +50,10 @@ export const defaultSiteConfig = {
         en: metadataEn,
         de: {
             ...metadataEn,
-            description: "Eine Sammlung von Text-Tools, um Text-Manipulation und Text-Formatierung zu unterstützen.",
-            keywords: ["text tools", "text manipulation", "text formatting", "online tools", "free tools", "werkzeuge", "text-tools", "text-manipulation", "text-formatting", "online-tools", "free-tools", "tools", "kostenlos", "gratis"],
-            abstract: "Eine Sammlung von Text-Tools, um Text-Manipulation und Text-Formatierung zu unterstützen.",
-            category: "werkzeuge",
+            description: "Website von Kyle Klus.",
             openGraph: {
                 ...metadataEn.openGraph,
-                locale: "de_DE",
-                countryName: "DE",
-                url: `${url}${basePath}`,
-                description: "Eine Sammlung von Text-Tools, um Text-Manipulation und Text-Formatierung zu unterstützen.",
+                description: "Website von Kyle Klus.",
             },
         }
     }
